@@ -1,0 +1,417 @@
+* {
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+
+body {
+  background-image: url(../imagenes/diablo.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: 100% 50%;
+  margin: 0;
+  padding: 0;
+  font-style: oblique;
+}
+
+header {
+  display: inline-flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  height: 90px;
+  background-color: #000;
+  position: fixed;
+  font-size: 35px;
+  font-family: serif;
+  z-index: 1;
+}
+
+.img-logo {
+  height: 150px;
+  margin-left: 5%;
+  margin-top: 50px;
+}
+
+.menu {
+  margin-right: 5%;
+}
+
+.menu ul {
+  /*Altera el alto y ancho de los elementos para ajustarse
+    lo mejor posible al espacio disponible*/
+  display: flex;
+  list-style: none;
+}
+
+.menu li a {
+  text-decoration: none;
+  color: #fff;
+  padding: 15px;
+}
+
+.menu ul li a:hover {
+  color: rgb(216, 1, 1);
+}
+
+main {
+  /*El position especifica el tipo de  posicionamiento utilizado para un elemento.
+
+  *static [default - no se coloca de ninguna manera especial; 
+  siempre se posiciona de acuerdo con el flujo normal de la página]
+
+  *relative [se posiciona en relación a su posición normal]
+
+  *absolute [se posiciona en relación con el antepasado más cercano,
+  es decir, se posiciona según el ancestro tenga un position; si no, utiliza el
+  posicionamiento del flujo de la página]
+
+  *fixed [está posicionado en relación con el viewport, lo que significa que 
+  siempre permanece en el mismo lugar incluso si se desplaza la página] 
+
+  *sticky [se posiciona según la posición del scroll del usuario]*/
+
+  position: relative;
+  top: 80px; /*coordenadas (top, right, bottom, left)*/
+}
+
+.gallery-container {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  height: 65vh; /*vh = medidas relativas de acuerdo al viewport (ventana del navegador)*/
+}
+
+div.gallery-container div.gallery-item {
+  /*Es una abreviatura para el flex-grow, flex-shrink, flex-basis,
+    que por defecto (los hijos del flex-container) tienen los siguientes valores:
+      flex-grow: 0;
+      flex-shrink: 1;
+      flex-basis: auto;
+  (Estos valores pueden cambiar dependiendo del navegador).
+
+  El flex con número positivo hace que el elemento flexible sea flexible 
+  y establece el flex-basis en cero.*/
+  flex: 1;
+  height: 100%;
+  /*Cursor = para editar el tipo de cursor*/
+  cursor: pointer;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: flex 0.5s ease-in-out;
+}
+
+div.gallery-item span {
+  color: #fff;
+  font-weight: 600;
+  font-size: 20px;
+  padding: 20px 8px;
+  background-color: rgb(216, 1, 1);
+  opacity: 0.8;
+  transition: opacity 0.8s ease;
+  border-radius: 5px;
+}
+
+div.gallery-container div.gallery-item:hover span {
+  opacity: 0;
+}
+
+.gallery-container .gallery-item:hover {
+  /*Flex-grow: indica el factor de crecimiento del item respecto a los demás elementos.
+    Flex-shrink: indica el factor de decrecimiento del item respecto a los demás elementos.
+    Flex-basis: define el tamaño por defecto (de base) de los items. 
+    (Unidades, porcentajes, etc), tamaño de ancho.
+    
+  Propiedades flex: sirven de atajo para estas tres propiedades.*/
+  flex: 3;
+}
+.gallery-container a {
+  text-decoration: none;
+}
+.gallery-container .gallery-item.g-item-1 {
+  background-image: url(../imagenes/Maldini.png);
+}
+
+.gallery-container .gallery-item.g-item-2 {
+  background-image: url(../imagenes/van-basten.jpg);
+}
+
+.gallery-container .gallery-item.g-item-3 {
+  background-image: url(../imagenes/gianni-rivera.jpg);
+}
+
+.gallery-container .gallery-item.g-item-4 {
+  background-image: url(../imagenes/gullit.jpg);
+}
+
+.gallery-container .gallery-item.g-item-5 {
+  background-image: url(../imagenes/baresi.jpg);
+}
+
+.info-container {
+  display: flex;
+  justify-content: space-between;
+}
+
+.infoprincipal {
+  padding: 50px;
+  margin-top: 50px;
+  margin-left: 10px;
+  width: 50%;
+}
+
+.infoprincipal h1 {
+  font-size: 50px;
+  font-weight: 700;
+  color: rgba(255, 255, 255, 0.822);
+  margin-left: 50px;
+  border-bottom: 2px solid rgba(255, 255, 255, 0.822);
+  display: inline;
+}
+
+.infoprincipal p {
+  color: rgba(255, 255, 255, 0.822);
+  font-size: 25px;
+  font-weight: 300;
+  margin-top: 40px;
+}
+
+.tabla {
+  padding: 50px;
+  margin-top: 65px;
+  margin-right: 10px;
+  width: 50%;
+  display: inline-block;
+  font-size: 100%;
+  text-align: left;
+  color: rgba(255, 255, 255, 0.822);
+}
+
+table,
+th,
+td {
+  border: 1px solid rgba(255, 255, 255, 0.822);
+  border-collapse: collapse;
+  text-align: center;
+}
+
+tr:hover {
+  background-color: rgb(216, 1, 1);
+  opacity: 0.822;
+}
+
+th,
+td {
+  padding: 15px;
+}
+
+th {
+  font-weight: 900;
+  font-size: 23px;
+}
+
+td:first-child {
+  font-size: 23px;
+}
+
+dl {
+  font-size: 30px;
+  font-weight: 500;
+  display: inline-flex;
+  margin-bottom: 30px;
+}
+
+.section-titulo {
+  margin-top: 200px;
+  text-align: center;
+}
+.section-titulo h1 {
+  display: inline;
+  font-size: 50px;
+  font-weight: 700;
+  color: rgba(255, 255, 255, 0.822);
+  border-bottom: 2px solid rgba(255, 255, 255, 0.822);
+}
+.personajes-container {
+  display: flex;
+  margin: auto 50px auto 10px;
+  padding: 50px;
+}
+
+.personajes-container .personajes {
+  padding: 40px;
+  margin: 0;
+  border-radius: 25px;
+  overflow: hidden;
+  box-shadow: 0 2px 2px rgba(0, 0, 0, 0);
+  text-align: center;
+  transition: all 0.25s;
+}
+
+.personajes-container .personajes:hover {
+  transform: translateY(-15px);
+
+  box-shadow: 0 12px 16px rgba(255, 255, 255, 0.219);
+}
+
+.personajes-container .personajes p {
+  margin-top: 40px;
+  font-size: 25px;
+  font-weight: 300;
+  color: rgba(255, 255, 255, 0.822);
+}
+
+.personajes-container .personajes img {
+  width: 400px;
+  height: 400px;
+  object-fit: cover;
+  margin-top: 1px;
+}
+
+.personajes.p-item-5 > img {
+  object-position: -100px;
+}
+
+.cards-container {
+  display: flex;
+  margin: auto 50px auto 10px;
+  padding: 50px;
+}
+
+.cards-container .cards {
+  padding: 40px;
+  margin: 0;
+  border-radius: 25px;
+  overflow: hidden;
+  box-shadow: 0 2px 2px rgba(0, 0, 0, 0.2);
+  text-align: center;
+  transition: all 0.25s;
+}
+
+.cards-container .cards:hover {
+  transform: translateY(-15px);
+
+  box-shadow: 0 12px 16px rgba(255, 255, 255, 0.219);
+}
+
+.cards-container .cards p {
+  margin-top: 40px;
+  font-size: 25px;
+  font-weight: 300;
+  color: rgba(255, 255, 255, 0.822);
+}
+
+.cards-container .cards img {
+  width: 400px;
+  height: 400px;
+  object-fit: cover;
+  margin-top: 1px;
+}
+.cards.c-item-1 > img {
+  object-position: -85px;
+}
+
+.cards.c-item-3 > img {
+  object-position: -100px;
+}
+
+.flex-container {
+  display: flex;
+  justify-content: space-around;
+  align-content: space-around;
+  margin: auto 100px;
+  padding: 20px;
+}
+
+.flex-items {
+  flex: 1;
+  padding: 10px;
+}
+
+.flex-items img {
+  margin-top: 20px;
+  width: 680px;
+  height: 400px;
+}
+
+footer {
+  width: 100%;
+  color: rgba(170, 170, 170, 0.822);
+}
+
+.footer-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  max-width: 1200px;
+  margin: auto;
+}
+
+.footer-items {
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
+  margin-bottom: 30px;
+  color: rgba(255, 255, 255, 0.822);
+  font-weight: 700;
+}
+
+.footer-items .footer-logo img {
+  width: 180px;
+}
+
+.footer-items .footer-parrafo {
+  max-width: 350px;
+  font-weight: 500;
+  color: rgba(255, 255, 255, 0.822);
+  font-size: 20px;
+}
+
+.footer-items a {
+  font-family: sans-serif;
+  text-decoration: none;
+  color: #7a7a7a;
+  margin-top: 15px;
+  opacity: 0.8;
+}
+
+.footer-items a .fab {
+  font-size: 20px;
+  margin-right: 20px;
+}
+
+.footer-items a:hover {
+  color: rgb(216, 1, 1);
+}
+
+.copyright {
+  max-width: 1000px;
+  margin: auto;
+  text-align: center;
+  padding: 0px 40px;
+}
+
+.copyright p {
+  margin-top: 20px;
+  color: #7a7a7a;
+  font-size: 20px;
+}
+
+.copyright hr {
+  border: none;
+  height: 0.2px;
+  background-color: #7a7a7a;
+}
+
+.copyright a {
+  text-decoration: none;
+  color: #7a7a7a;
+}
+
+.copyright a:hover {
+  opacity: 0.5;
+  color: rgb(216, 1, 1);
+}
