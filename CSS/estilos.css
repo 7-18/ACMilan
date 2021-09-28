@@ -21,7 +21,7 @@ header {
   height: 90px;
   background-color: #000;
   position: fixed;
-  font-size: 35px;
+  font-size: 150%;
   font-family: serif;
   z-index: 1;
 }
@@ -249,6 +249,8 @@ dl {
   box-shadow: 0 2px 2px rgba(0, 0, 0, 0);
   text-align: center;
   transition: all 0.25s;
+  height: 100%;
+  width: 100%;
 }
 
 .personajes-container .personajes:hover {
@@ -262,18 +264,17 @@ dl {
   font-size: 25px;
   font-weight: 300;
   color: rgba(255, 255, 255, 0.822);
+  height: 100%;
 }
 
 .personajes-container .personajes img {
-  width: 400px;
+  width: 100%;
   height: 400px;
   object-fit: cover;
   margin-top: 1px;
 }
 
-.personajes.p-item-5 > img {
-  object-position: -100px;
-}
+
 
 .cards-container {
   display: flex;
@@ -289,6 +290,8 @@ dl {
   box-shadow: 0 2px 2px rgba(0, 0, 0, 0.2);
   text-align: center;
   transition: all 0.25s;
+  height: 100%;
+  width: 100%;
 }
 
 .cards-container .cards:hover {
@@ -302,20 +305,14 @@ dl {
   font-size: 25px;
   font-weight: 300;
   color: rgba(255, 255, 255, 0.822);
+  height: 100%;
 }
 
 .cards-container .cards img {
-  width: 400px;
+  width: 100%;
   height: 400px;
   object-fit: cover;
   margin-top: 1px;
-}
-.cards.c-item-1 > img {
-  object-position: -85px;
-}
-
-.cards.c-item-3 > img {
-  object-position: -100px;
 }
 
 .flex-container {
@@ -333,8 +330,8 @@ dl {
 
 .flex-items img {
   margin-top: 20px;
-  width: 680px;
-  height: 400px;
+  width: 100%;
+  height: 30%;
 }
 
 footer {
